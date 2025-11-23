@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 40px;
+    width: clamp(300px, 50vw, 500px);
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgb(100, 100, 100);
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+.title{
+    color: rgb(33, 33, 116);
+    text-align: center;
+    font-size: 3rem;
+    padding: 30px;
+    transition: all 0.5s ease-in-out;
+}
+.form-heading{
+    text-align: center;
+    color: white;
+    padding: 15px;
+    background: rgb(33, 33, 116);
+    border-radius: 10px 10px 0 0px;
+}
+#form-validate{
+    display: grid;
+    padding: 20px;
+    margin: auto;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label{
+    font-size: 18px;
+    color: grey;
+    margin-bottom: 5px;
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#form-validate > .form-group > input {
+    height: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-size: 15px;
+    padding: 5px;
+    animation: textUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(-30px);
+}
+@keyframes textUp {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.form-group span {
+    color: red;
+    margin-top: 15px;
+}
+#form-validate button{
+    height: 35px;
+    background-color: rgb(33, 33, 116);
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 50px;
+}
+.footer-name{
+    text-align: center;
+    color: rgb(33, 33, 116);
+    margin: 20px;
+    font-weight: bold;
+}
+.footer i{
+    color: rgb(33, 33, 116);
+    margin: 10px 30px;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 425px) {
+    .title {
+        font-size: 2rem;
+    }
+    .container{
+        width: 70vw;
+    }
+    .form-heading{
+        font-size: 1.2rem;
+    }
+    #form-validate button {
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 760px) {
+    .container{
+        width: clamp(40vw, 50vw, 70vw)
+    }
+    #form-validate button {
+        height: 30px;
+    }
+}
